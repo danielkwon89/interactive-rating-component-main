@@ -106,11 +106,11 @@ p {
     letter-spacing: 1px;
 }
 
-.submit-button:hover {
+#submit-button:hover {
     cursor: pointer;
 }
 
-.submit-button:active {
+#submit-button:active {
     background-color: white;
     color: rgba(252,118,18,255);
     cursor: pointer;
