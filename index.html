@@ -3,10 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./stylesheets/styles.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div>
-    <h1>Site Deployment Test</h1>
+
+  <div class="modal-container">
+    <div class="modal">
+      <div class="star-button-container">
+        <img src="./images/icon-star.svg">
+      </div>
+      <h2>How did we do?</h2>
+      <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <div class="rating-buttons-container">
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+      </div>
+      <div id="submit-button">Submit</div>
+    </div>
   </div>
+
+  <div class="thank-you-modal-container">
+    <div class="modal">
+      <div class="thank-you-image-container">
+        <img src="./images/illustration-thank-you.svg">
+      </div>
+      <div id="selection-confirmation"></div>
+      <h2 class="thank-you-message">Thank you!</h2>
+      <p class="thank-you-message">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+
+      let ratingSelection
+
+      let ratingsButtons = document.querySelectorAll(".rating-buttons-container a")
+
+      let selectionOne, selectionTwo, selectionThree, selectionFour, selectionFive
+      [selectionOne, selectionTwo, selectionThree, selectionFour, selectionFive] = ratingsButtons
+
+      const unselectSelections = () => ratingsButtons.forEach(selection => selection.removeAttribute("id"))
+
+      const selectionClickHandler = (number, element) => {
+        ratingSelection = number
+        unselectSelections()
+        element.setAttribute("id", "selected")
+      }
+      
+      selectionOne.addEventListener("click", () => selectionClickHandler(1, selectionOne))
+      selectionTwo.addEventListener("click", () => selectionClickHandler(2, selectionTwo))
+      selectionThree.addEventListener("click", () => selectionClickHandler(3, selectionThree))
+      selectionFour.addEventListener("click", () => selectionClickHandler(4, selectionFour))
+      selectionFive.addEventListener("click", () => selectionClickHandler(5, selectionFive))
+
+      let submitButton = document.getElementById("submit-button")
+      submitButton.addEventListener("click", () => {
+
+        const selectionMade = () => {
+          let temp = false
+          ratingsButtons.forEach(selection => {
+            if (selection.id) temp = true
+          })
+          return temp
+        }
+
+        if (selectionMade()) {
+          let modalContainer = document.getElementsByClassName("modal-container")[0]
+          modalContainer.style.display = "none"
+
+          let thankYouModalContainer = document.getElementsByClassName("thank-you-modal-container")[0]
+          thankYouModalContainer.style.display = "flex"
+
+          let selectionConfirmation = document.getElementById("selection-confirmation")
+          selectionConfirmation.innerHTML = `You selected ${ratingSelection} out of 5`
+        }
+
+      })
+    })
+  </script>
 </body>
 </html>

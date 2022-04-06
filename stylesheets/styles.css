@@ -1,0 +1,137 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* rgba(113,119,129,255) light gray */
+/* rgba(252,118,18,255) orange */
+/* rgba(38,47,56,255) dark gray */
+
+body {
+    background-color: rgba(20,21,25,255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thank-you-modal-container {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal {
+    width: 300px;
+    height: 310px;
+    background-color: rgba(33,40,49,255);
+    border-radius: 7.5%;
+    padding: 30px
+}
+
+.star-button-container {
+    background-color: rgba(38,47,56,255);
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+h1, h2, h3 {
+    color: white;
+    font-family: Overpass;
+    font-weight: 400;
+    margin: 28px 0px 12px 0px;
+}
+
+p {
+    color: rgba(113,119,129,255);
+    font-family: Overpass;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.rating-buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-buttons-container a {
+    font-family: Overpass;
+    color: rgba(113,119,129,255);
+    background-color: rgba(38,47,56,255);
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 18px 0px 24px 0px;
+}
+
+.rating-buttons-container a:hover {
+    background-color: rgba(113,119,129,255);
+    color: white;
+    cursor: pointer;
+}
+
+.rating-buttons-container a:active {
+    background-color: white;
+    color: rgba(252,118,18,255);
+    cursor: pointer;
+}
+
+#selected {
+    background-color: white;
+    color: rgba(252,118,18,255);
+}
+
+#submit-button {
+    font-family: Overpass;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    background-color: rgba(252,118,18,255);
+    padding: 10px 0px 10px 0px;
+    border-radius: 18px;
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.submit-button:active {
+    background-color: white;
+    color: rgba(252,118,18,255);
+    cursor: pointer;
+}
+
+#selection-confirmation {
+    font-family: Overpass;
+    font-size: 15px;
+    background-color: rgba(38,47,56,255);
+    color: rgba(252,118,18,255);
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 22px 10px 22px;
+    display: table;
+    margin: 20px auto 20px auto;
+}
+
+.thank-you-message {
+    text-align: center;
+}
+
+.thank-you-image-container {
+    text-align: center;
+}
